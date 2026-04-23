@@ -4,7 +4,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building2, TrendingUp, Activity } from "lucide-react";
 
 export default async function Home() {
-  const data = await api.getCompanies();
+  let data = { count: 0 };
+  let error = false;
+
+  try {
+    data = await api.getCompanies();
+  } catch (e) {
+    console.error("Failed to load companies:", e);
+    error = true;
+  }
 
   return (
     <div className="p-8 space-y-8">
@@ -14,6 +22,13 @@ export default async function Home() {
           Real-time insights and analytics for Indian stock market.
         </p>
       </div>
+
+      {error && (
+        <div className="p-4 border border-red-200 bg-red-50 text-red-800 rounded-lg">
+          <p className="font-semibold">Backend Connection Issue</p>
+          <p className="text-sm">We couldn't connect to the server. Please check if the backend is running and the API URL is set correctly in Vercel.</p>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card>
@@ -39,7 +54,7 @@ export default async function Home() {
             <TrendingUp className="w-4 h-4 text-green-500" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-green-500">Bullish</div>
+            <div className="text-2xl font-bold text-green-500">{error ? "N/A" : "Bullish"}</div>
             <p className="text-xs text-muted-foreground mt-1">
               Based on recent 7D MA averages
             </p>
@@ -54,9 +69,11 @@ export default async function Home() {
             <Activity className="w-4 h-4 text-blue-500" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-blue-500">Live</div>
+            <div className={`text-2xl font-bold ${error ? "text-red-500" : "text-blue-500"}`}>
+              {error ? "Offline" : "Live"}
+            </div>
             <p className="text-xs text-muted-foreground mt-1">
-              Data pipelines active
+              Data pipelines {error ? "suspended" : "active"}
             </p>
           </CardContent>
         </Card>
