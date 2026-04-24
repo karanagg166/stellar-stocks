@@ -3,6 +3,8 @@ import TopMovers from "@/components/TopMovers";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building2, TrendingUp, Activity } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   let data = { count: 0 };
   let error = false;

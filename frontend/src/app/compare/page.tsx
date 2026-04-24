@@ -3,6 +3,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeftRight } from "lucide-react";
 import StockChart from "@/components/StockChart"; // We'll adapt or create a specific compare chart if needed
 import PlotlyChart from "@/components/PlotlyChart";
+
+export const dynamic = "force-dynamic";
+
 export default async function ComparePage({
   searchParams,
 }: {
