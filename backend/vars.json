@@ -1,0 +1,13 @@
+{
+  "RAILWAY_ENVIRONMENT": "production",
+  "RAILWAY_ENVIRONMENT_ID": "df2151b0-0045-45cf-b350-a2e58c669576",
+  "RAILWAY_ENVIRONMENT_NAME": "production",
+  "RAILWAY_PRIVATE_DOMAIN": "stellar-stocks-backend.railway.internal",
+  "RAILWAY_PROJECT_ID": "20351ee2-3630-49ef-9f29-22cb51d0e407",
+  "RAILWAY_PROJECT_NAME": "stellar-stocks-backend",
+  "RAILWAY_PUBLIC_DOMAIN": "stellar-stocks-backend-production.up.railway.app",
+  "RAILWAY_SERVICE_ID": "b86067cd-9697-4bff-922c-9d566a167989",
+  "RAILWAY_SERVICE_NAME": "stellar-stocks-backend",
+  "RAILWAY_SERVICE_STELLAR_STOCKS_BACKEND_URL": "stellar-stocks-backend-production.up.railway.app",
+  "RAILWAY_STATIC_URL": "stellar-stocks-backend-production.up.railway.app"
+}

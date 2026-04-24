@@ -26,7 +26,7 @@ export default async function Home() {
       {error && (
         <div className="p-4 border border-red-200 bg-red-50 text-red-800 rounded-lg">
           <p className="font-semibold">Backend Connection Issue</p>
-          <p className="text-sm">We couldn't connect to the server. Please check if the backend is running and the API URL is set correctly in Vercel.</p>
+          <p className="text-sm">We couldn&apos;t connect to the server. Please check if the backend is running and the API URL is set correctly in Vercel.</p>
         </div>
       )}
 

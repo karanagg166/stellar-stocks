@@ -11,7 +11,7 @@ interface StockChartProps {
   symbol: string;
 }
 
-export default function StockChart({ data, symbol }: StockChartProps) {
+export default function StockChart({ data }: StockChartProps) {
   const dates = data.map((d) => d.date);
   const closes = data.map((d) => d.close);
   const ma7 = data.map((d) => d.moving_avg_7d);
